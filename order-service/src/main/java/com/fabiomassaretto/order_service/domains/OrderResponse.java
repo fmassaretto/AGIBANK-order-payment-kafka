@@ -1,6 +1,6 @@
 package com.fabiomassaretto.order_service.domains;
 
-import com.fabimassaretto.commons.domains.enums.OrderStatus;
+import com.fabiomassaretto.order_service.domains.enums.OrderStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

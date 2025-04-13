@@ -1,9 +1,9 @@
 package com.fabiomassaretto.order_service.services;
 
-import com.fabimassaretto.commons.domains.enums.OrderStatus;
 import com.fabiomassaretto.order_service.domains.OrderEntity;
 import com.fabiomassaretto.order_service.domains.OrderRequest;
 import com.fabiomassaretto.order_service.domains.OrderResponse;
+import com.fabiomassaretto.order_service.domains.enums.OrderStatus;
 import com.fabiomassaretto.order_service.domains.mappers.OrderMapper;
 import com.fabiomassaretto.order_service.exceptions.OrderNotFoundException;
 import com.fabiomassaretto.order_service.repositories.OrderRepository;

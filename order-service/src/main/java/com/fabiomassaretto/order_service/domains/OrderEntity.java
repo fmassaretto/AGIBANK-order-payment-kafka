@@ -1,6 +1,6 @@
 package com.fabiomassaretto.order_service.domains;
 
-import com.fabimassaretto.commons.domains.enums.OrderStatus;
+import com.fabiomassaretto.order_service.domains.enums.OrderStatus;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
