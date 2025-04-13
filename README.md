@@ -188,7 +188,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 ## How to test the Application
 _For now you can test using postman collections and follow these steps:_
 
-1. Import Postman collection "AGIBANK-order-payment-kafka.postman_collection.json" from:
+1. Import Postman collection "AGIBANK-order-payment-kafka.postman_collection.json" from: https://github.com/fmassaretto/AGIBANK-order-payment-kafka/blob/main/AGIBANK-order-payment-kafka.postman_collection.json
 2. After importing, uses the 'Create Order' request to create a new order
 3. You can see the order by calling 'Get All Order' request
 4. To simulate a payment call the 'Pay Order' to set the status to paid
