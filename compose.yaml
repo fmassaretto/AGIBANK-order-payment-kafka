@@ -1,9 +1,9 @@
 services:
-  order-service: &app
+  orderservice: &app
     build:
       context: .
-      dockerfile: order-service/docker/Dockerfile
-    hostname: order-service
+      dockerfile: orderservice/docker/Dockerfile
+    hostname: orderservice
     environment:
       SERVER_PORT: 8081
       DATABASE_URL: jdbc:postgresql://localhost:5432/ordermanagement_db
@@ -28,7 +28,7 @@ services:
           memory: '300M'
     network_mode: "host"
 
-  payment-service:
+  paymentservice:
     build:
       context: .
       dockerfile: payment-service/docker/Dockerfile
@@ -43,7 +43,7 @@ services:
         soft: 1000000
         hard: 1000000
     depends_on:
-      - order-service
+      - orderservice
     deploy:
       resources:
         limits:
