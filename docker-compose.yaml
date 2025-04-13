@@ -4,52 +4,50 @@ services:
       context: .
       dockerfile: orderservice/docker/Dockerfile
     hostname: orderservice
+    ports:
+      - "8081:8081"
     environment:
       SERVER_PORT: 8081
-      DATABASE_URL: jdbc:postgresql://localhost:5432/ordermanagement_db
+      DATABASE_URL: jdbc:postgresql://db-postgresql:5432/order_agibank_db
       DATABASE_USERNAME: fmass
       DATABASE_PASSWORD: lmi56n
+      SPRING_PROFILES_ACTIVE: docker
       DB_POOL: 35
       CLUSTER: true
       CLUSTER_WORKERS: 5
-    volumes:
-      - ./:/app
-    ulimits:
-      nproc: 1000000
-      nofile:
-        soft: 1000000
-        hard: 1000000
     depends_on:
+      - paymentservice
+    links:
+      - broker
       - db-postgresql
-    deploy:
-      resources:
-        limits:
-          cpus: '0.4'
-          memory: '300M'
-    network_mode: "host"
+    networks:
+      - agibank-network
 
   paymentservice:
     build:
       context: .
-      dockerfile: payment-service/docker/Dockerfile
+      dockerfile: paymentservice/docker/Dockerfile
     hostname: payment-service
+    ports:
+      - "8082:8082"
     environment:
       SERVER_PORT: 8082
-    volumes:
-      - ./:/app
-    ulimits:
-      nproc: 1000000
-      nofile:
-        soft: 1000000
-        hard: 1000000
-    depends_on:
-      - orderservice
-    deploy:
-      resources:
-        limits:
-          cpus: '0.4'
-          memory: '300M'
-    network_mode: "host"
+      SPRING_PROFILES_ACTIVE: docker
+    links:
+      - broker
+    networks:
+      - agibank-network
+
+  broker:
+    image: moeenz/docker-kafka-kraft:latest
+    restart: always
+    ports:
+      - "9092:9092"
+    environment:
+      - KAFKA_BROKER_ID=1
+      - KRAFT_CONTAINER_HOST_NAME=broker
+    networks:
+      - agibank-network
 
   db-postgresql:
     image: 'postgres:latest'
@@ -61,4 +59,9 @@ services:
     ports:
       - '5432:5432'
     command: "postgres -c max_connections=400 -c shared_buffers=512MB -c effective_cache_size=1536MB -c maintenance_work_mem=256MB -c checkpoint_completion_target=0.9 -c wal_buffers=16MB -c default_statistics_target=100 -c random_page_cost=1.1 -c effective_io_concurrency=200 -c work_mem=1310kB -c huge_pages=off -c min_wal_size=1GB -c max_wal_size=4GB"
-    network_mode: "host"
+    networks:
+      - agibank-network
+
+networks:
+  agibank-network:
+    driver: bridge

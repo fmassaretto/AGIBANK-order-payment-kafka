@@ -22,7 +22,9 @@ public class PaymentController {
     private String TOPIC_PAYMENTS_CONFIRMED;
 
     /*
-    *
+    * Atenção: essa chamada rest é apenas para facilitar a sumulação de um pagamento
+    * de um pedido, que poderia/deveria se feito por um getway de pagamento que por motivos
+    * de demonstração foi omitido
     * */
     @PostMapping("/{orderId}")
     public ResponseEntity<String> confirmPayment(@PathVariable Long orderId) {
