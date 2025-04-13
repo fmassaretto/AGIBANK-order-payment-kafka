@@ -15,7 +15,7 @@ RUN gradle clean build
 
 
 FROM openjdk:21-slim
-ENV ARTIFACT_NAME=order-service-0.0.1-SNAPSHOT.jar
+ENV ARTIFACT_NAME=orderservice-0.0.1-SNAPSHOT.jar
 ENV APP_HOME=/usr/app/
 
 WORKDIR $APP_HOME
