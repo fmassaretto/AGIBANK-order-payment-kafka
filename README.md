@@ -30,12 +30,12 @@
 <br />
 <div align="center">
   <a href="https://github.com/fmassaretto/AGIBANK-order-payment-kafka">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="logo.png" alt="Logo" width="200" height="200">
   </a>
 
 <h3 align="center">Project Agibank - order-payment microservices with kafka</h3>
 
-  <p align="center">
+  <p>
     An project for Agibank
     <br />
     <a href="https://github.com/fmassaretto/AGIBANK-order-payment-kafka"><strong>Explore the docs » (soon)</strong></a>
@@ -69,7 +69,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#testing">Testing the application</a></li>
+    <li><a href="#testing-the-application">Testing the application</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -81,9 +81,6 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 
 This project is to demonstrate two microservices: order and payment communicating via Apache Kafka. 
 The order service being responsible for create, list the orders and update the status of the orders 
@@ -185,10 +182,10 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 
 <!-- TESTING THE APPLICATION -->
-## How to test the Application
+## Testing the Application
 _For now you can test using postman collections and follow these steps:_
 
-1. Import Postman collection "AGIBANK-order-payment-kafka.postman_collection.json" from:
+1. Import Postman collection "AGIBANK-order-payment-kafka.postman_collection.json" from: https://github.com/fmassaretto/AGIBANK-order-payment-kafka/blob/main/AGIBANK-order-payment-kafka.postman_collection.json
 2. After importing, uses the 'Create Order' request to create a new order
 3. You can see the order by calling 'Get All Order' request
 4. To simulate a payment call the 'Pay Order' to set the status to paid
@@ -279,7 +276,7 @@ Use this space to list resources you find helpful and would like to give credit 
 [license-url]: https://github.com/fmassaretto/AGIBANK-order-payment-kafka/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/fmassaretto/
-[product-screenshot]: images/screenshot.png
+
 [Java]: https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white
 [Java-url]: https://www.java.com/en/
 [Spring]: https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white
