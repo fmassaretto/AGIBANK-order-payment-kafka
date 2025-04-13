@@ -30,7 +30,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/fmassaretto/AGIBANK-order-payment-kafka">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="logo.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Project Agibank - order-payment microservices with kafka</h3>
@@ -81,9 +81,6 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 
 This project is to demonstrate two microservices: order and payment communicating via Apache Kafka. 
 The order service being responsible for create, list the orders and update the status of the orders 
@@ -279,7 +276,7 @@ Use this space to list resources you find helpful and would like to give credit 
 [license-url]: https://github.com/fmassaretto/AGIBANK-order-payment-kafka/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/fmassaretto/
-[product-screenshot]: images/screenshot.png
+
 [Java]: https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white
 [Java-url]: https://www.java.com/en/
 [Spring]: https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white
