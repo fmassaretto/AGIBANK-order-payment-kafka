@@ -24,7 +24,6 @@ repositories {
 }
 
 dependencies {
-	implementation(project(":commons"))
 }
 
 tasks.withType<Test> {

@@ -1,6 +1,6 @@
 package com.fabiomassaretto.order_service.kafka.listener;
 
-import com.fabimassaretto.commons.domains.enums.OrderStatus;
+import com.fabiomassaretto.order_service.domains.enums.OrderStatus;
 import com.fabiomassaretto.order_service.services.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.annotation.KafkaListener;
