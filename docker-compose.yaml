@@ -1,5 +1,5 @@
 services:
-  orderservice: &app
+  orderservice:
     build:
       context: .
       dockerfile: orderservice/docker/Dockerfile
