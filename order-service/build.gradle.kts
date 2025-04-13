@@ -18,16 +18,13 @@ repositories {
 }
 
 dependencies {
+	implementation(project(":commons"))
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("org.springframework.kafka:spring-kafka")
-	implementation("org.springdoc:springdoc-openapi-starter-webmvc-api:2.8.6")
-	compileOnly("org.projectlombok:lombok")
-	annotationProcessor("org.projectlombok:lombok")
+	implementation("org.modelmapper:modelmapper:3.2.2")
+	implementation("org.mapstruct:mapstruct:1.6.3")
+	implementation("io.swagger.core.v3:swagger-jaxrs2:2.2.30")
+	annotationProcessor("org.mapstruct:mapstruct-processor:1.6.3")
 	runtimeOnly("org.postgresql:postgresql")
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	testImplementation("org.springframework.kafka:spring-kafka-test")
-	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
 tasks.withType<Test> {
