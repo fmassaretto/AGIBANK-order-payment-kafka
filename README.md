@@ -30,12 +30,12 @@
 <br />
 <div align="center">
   <a href="https://github.com/fmassaretto/AGIBANK-order-payment-kafka">
-    <img src="logo.png" alt="Logo" width="80" height="80">
+    <img src="logo.png" alt="Logo" width="200" height="200">
   </a>
 
 <h3 align="center">Project Agibank - order-payment microservices with kafka</h3>
 
-  <p align="center">
+  <p>
     An project for Agibank
     <br />
     <a href="https://github.com/fmassaretto/AGIBANK-order-payment-kafka"><strong>Explore the docs » (soon)</strong></a>
@@ -69,7 +69,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#testing">Testing the application</a></li>
+    <li><a href="#testing-the-application">Testing the application</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -182,7 +182,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 
 <!-- TESTING THE APPLICATION -->
-## How to test the Application
+## Testing the Application
 _For now you can test using postman collections and follow these steps:_
 
 1. Import Postman collection "AGIBANK-order-payment-kafka.postman_collection.json" from: https://github.com/fmassaretto/AGIBANK-order-payment-kafka/blob/main/AGIBANK-order-payment-kafka.postman_collection.json
