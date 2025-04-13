@@ -10,11 +10,11 @@ repositories {
 }
 
 dependencies {
-    annotationProcessor("org.projectlombok:lombok")
-    compileOnly("org.projectlombok:lombok")
-    testImplementation(platform("org.junit:junit-bom:5.10.0"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
+//    testImplementation(platform("org.junit:junit-bom:5.10.0"))
+//    testImplementation("org.junit.jupiter:junit-jupiter")
 }
+
+//tasks.register("prepareKotlinBuildScriptModel"){}
 
 tasks.test {
     useJUnitPlatform()

@@ -4,5 +4,5 @@ import com.fabimassaretto.commons.domains.enums.OrderStatus;
 
 import java.math.BigDecimal;
 
-public record Order(long id, BigDecimal amount, int quantity, OrderStatus orderStatus) {
+public record Order(long id, BigDecimal amount, int quantity, String description, OrderStatus orderStatus) {
 }
