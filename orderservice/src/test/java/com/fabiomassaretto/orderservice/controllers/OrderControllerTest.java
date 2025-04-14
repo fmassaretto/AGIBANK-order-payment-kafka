@@ -43,10 +43,7 @@ class OrderControllerTest {
     @InjectMocks
     private OrderController orderController;
 
-    private OrderEntity orderEntity1;
-    private OrderEntity orderEntity2;
     private OrderRequest orderRequest;
-    private List<OrderEntity> orderEntityList;
     private List<OrderResponse> orderResponseList;
 
     @BeforeEach
@@ -94,7 +91,7 @@ class OrderControllerTest {
 
 
     private void setupModels() {
-        orderEntity1 = OrderEntity.builder()
+        OrderEntity orderEntity1 = OrderEntity.builder()
                 .id(1L)
                 .description("Order 1")
                 .amount(BigDecimal.valueOf(100.00))
@@ -102,7 +99,7 @@ class OrderControllerTest {
                 .status(OrderStatus.PENDING_PAYMENT)
                 .build();
 
-        orderEntity2 = OrderEntity.builder()
+        OrderEntity orderEntity2 = OrderEntity.builder()
                 .id(2L)
                 .description("Order 2")
                 .amount(BigDecimal.valueOf(80.00))
@@ -116,7 +113,7 @@ class OrderControllerTest {
                 .quantity(10)
                 .build();
 
-        orderEntityList = List.of(orderEntity1, orderEntity2);
+        List<OrderEntity> orderEntityList = List.of(orderEntity1, orderEntity2);
 
         orderResponseList = orderEntityList.stream().map(item -> OrderResponse.builder()
                 .id(item.getId())
