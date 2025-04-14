@@ -28,6 +28,7 @@ dependencies {
 	implementation("org.modelmapper:modelmapper:3.2.2")
 	implementation("org.mapstruct:mapstruct:1.6.3")
 	implementation("io.swagger.core.v3:swagger-jaxrs2:2.2.30")
+	implementation("org.netbeans.external:com-google-gson:RELEASE113")
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")
 	annotationProcessor("org.mapstruct:mapstruct-processor:1.6.3")
