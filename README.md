@@ -185,6 +185,11 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 ## Testing the Application
 _For now you can test using postman collections and follow these steps:_
 
+### Using Swagger
+1. For Order Service: http://localhost:8081/swagger-ui/index.html
+2. For Payment Service: http://localhost:8082/swagger-ui/index.html
+
+### Using PostMan
 1. Import Postman collection "AGIBANK-order-payment-kafka.postman_collection.json" from: https://github.com/fmassaretto/AGIBANK-order-payment-kafka/blob/main/AGIBANK-order-payment-kafka.postman_collection.json
 2. After importing, uses the 'Create Order' request to create a new order
 3. You can see the order by calling 'Get All Order' request
@@ -198,7 +203,7 @@ _Things to improve in future releases_
 - [ ] Create two topics instead of one: for orders created and for orders paid
 - [ ] Both microservices produce and consume for the topics
 - [ ] Add Cache
-- [ ] Add Swagger
+- [x] Add Swagger
 - [ ] Add more tests
 - [ ] Create a microservice only for kafka (TBD)
 
