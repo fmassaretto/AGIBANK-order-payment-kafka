@@ -9,8 +9,8 @@ services:
     environment:
       SERVER_PORT: 8081
       DATABASE_URL: jdbc:postgresql://db-postgresql:5432/order_agibank_db
-      DATABASE_USERNAME: fmass
-      DATABASE_PASSWORD: lmi56n
+      DATABASE_USERNAME: change_user
+      DATABASE_PASSWORD: change_password
       SPRING_PROFILES_ACTIVE: docker
       DB_POOL: 35
       CLUSTER: true
