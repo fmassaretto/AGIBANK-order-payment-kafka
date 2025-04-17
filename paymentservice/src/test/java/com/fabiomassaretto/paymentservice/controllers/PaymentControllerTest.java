@@ -1,8 +1,10 @@
 package com.fabiomassaretto.paymentservice.controllers;
 
+import com.fabiomassaretto.paymentservice.services.PaymentService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 import org.springframework.http.MediaType;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.test.web.servlet.MockMvc;
@@ -17,13 +19,16 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 class PaymentControllerTest {
 
+    @Mock
+    private PaymentService paymentService;
+
     private final KafkaTemplate<String, String> kafkaTemplate = mock(KafkaTemplate.class);
 
     MockMvc mockWvc;
 
     @BeforeEach
     void setUp() {
-        this.mockWvc = MockMvcBuilders.standaloneSetup(new PaymentController(kafkaTemplate)).build();
+        this.mockWvc = MockMvcBuilders.standaloneSetup(new PaymentController(paymentService)).build();
     }
 
     @Test

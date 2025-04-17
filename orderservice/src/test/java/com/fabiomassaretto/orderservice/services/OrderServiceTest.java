@@ -6,6 +6,7 @@ import com.fabiomassaretto.orderservice.domains.OrderResponse;
 import com.fabiomassaretto.orderservice.domains.enums.OrderStatus;
 import com.fabiomassaretto.orderservice.domains.mappers.OrderMapper;
 import com.fabiomassaretto.orderservice.exceptions.OrderNotFoundException;
+import com.fabiomassaretto.orderservice.kafka.producers.KafkaProducer;
 import com.fabiomassaretto.orderservice.repositories.OrderRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -13,6 +14,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
@@ -24,6 +26,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
@@ -35,6 +38,9 @@ class OrderServiceTest {
 
     @Mock
     private OrderMapper orderMapper;
+
+    @Mock
+    private KafkaProducer kafkaProducerMock = mock(KafkaProducer.class, Mockito.CALLS_REAL_METHODS);
 
     @InjectMocks
     private OrderService orderService;
@@ -55,6 +61,8 @@ class OrderServiceTest {
     void whenPassingValidOrderRequestShouldSaveAndReturnOrderResponse() {
         given(orderMapper.mapOrderRequestToEntity(any())).willReturn(orderEntity1);
         given(orderRepository.save(any())).willReturn(orderEntity2);
+//        given(kafkaProducer.simpleSend(any(), any(), any())).willReturn(new KafkaProducer());
+        kafkaProducerMock.simpleSend(any(), any(), any());
         given(orderMapper.mapOrderEntityToResponse(orderEntity2)).willReturn(orderResponseList.getFirst());
 
         OrderResponse result = orderService.create(orderRequest);

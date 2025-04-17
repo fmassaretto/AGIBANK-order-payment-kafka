@@ -1,4 +1,4 @@
-package com.fabiomassaretto.orderservice.kafka.listener;
+package com.fabiomassaretto.orderservice.kafka.listeners;
 
 import com.fabiomassaretto.orderservice.domains.enums.OrderStatus;
 import com.fabiomassaretto.orderservice.services.OrderService;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 public class PaymentListener {
     private final OrderService orderService;
 
-    @KafkaListener(topics = "#{'${kafka.topic.payment-confirmed}'}", groupId = "order-service")
+    @KafkaListener(topics = "#{'${kafka.topic.orders.payment-confirmed}'}", groupId = "order-service")
     public void listen(String message) {
         Long orderId = Long.valueOf(message);
         orderService.updateStatus(orderId, OrderStatus.PAID);
